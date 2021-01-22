@@ -218,8 +218,8 @@ console.log(artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-// artists[9].name = "Vincent Van Gogh";
-// console.log(artists[9].name);
+artists[9].name = "Vincent Van Gogh";
+console.log(artists[9].name);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -244,13 +244,17 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-// function get20s(array){
-//   let aYears = parseInt(array.years);
-//   return array.years;
-//   if ((parseInt(array.years) >= 1900) && (parseInt(array.years) <= 2000)){
-//     return NewArray;
-//   }
-// }
+function get20s(array){
+  let aYears = [];
+  for (let i = 0; i < array.length; i++){
+    let nums = array[i].years.split(" - ");
+    if ((parseInt(nums[0]) >= 1900) && (parseInt(nums[1]) <= 2000)){
+      aYears.push(array[i].name);
+     
+    }
+  }  
+  return aYears;
+}
 
 
 
@@ -264,7 +268,7 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
 function removeArtist(array, number){
-  array.splice(number);
+  array.splice(number, 1);
   return array.length;
 }
 
@@ -286,15 +290,15 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array){
-    array.push{id, name, years, genre, nationality, bio}
+    array.push({id: 20,
+      name: "Cory", 
+      years: "1995 - current day",
+      genre: "Web Design", 
+      nationality: "USA",
+      bio: "Labore rebum dolor dolores et justo ipsum. Takimata consetetur sea et nonumy no justo, sed ea lorem consetetur vero, sed."});
+    return array;
 }
-artists.push{id: 20,
-  name: "Cory", 
-  years: "1995 - current day",
-  genre: "Web Design", 
-  nationality: "USA",
-  bio: "Labore rebum dolor dolores et justo ipsum. Takimata consetetur sea et nonumy no justo, sed ea lorem consetetur vero, sed."};
-return artists;
+
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -305,12 +309,15 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array){
-  let i = parseInt(array.paintings);
-  if (i > 100){
-    return array.name;
+  let newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i].paintings > 100) {
+      newArray.push(array[i].name);
+    }
   }
+  return newArray;
 }
-
+  
 
 
 
