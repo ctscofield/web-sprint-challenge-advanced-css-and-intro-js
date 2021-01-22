@@ -244,13 +244,13 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(array){
-  let aYears = parseInt(array.years);
-  return array.years;
-  if ((parseInt(array.years) >= 1900) && (parseInt(array.years) <= 2000)){
-    return NewArray;
-  }
-}
+// function get20s(array){
+//   let aYears = parseInt(array.years);
+//   return array.years;
+//   if ((parseInt(array.years) >= 1900) && (parseInt(array.years) <= 2000)){
+//     return NewArray;
+//   }
+// }
 
 
 
@@ -266,7 +266,6 @@ function get20s(array){
 function removeArtist(array, number){
   array.splice(number);
   return array.length;
-   /*Your Code Here*/
 }
 
 
@@ -305,8 +304,11 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  let i = parseInt(array.paintings);
+  if (i > 100){
+    return array.name;
+  }
 }
 
 
